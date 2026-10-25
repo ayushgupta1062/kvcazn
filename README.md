@@ -6,7 +6,7 @@ A web portal for a UK energy utility's day-ahead buying desk. For every purchase
 2. **How wrong are those forecasts, in numbers?** Typical miss, big misses, bias, reserve to hold, and how all of these change with how early the forecast was issued, the day and the hour.
 
 > **Live app:** https://kvcazn.vercel.app  
-> **Demo video:** `https://REPLACE-WITH-YOUR-UNLISTED-YOUTUBE-URL`
+> **Demo video:** `https://youtu.be/smwrgAJEYkc`
 
 ---
 
