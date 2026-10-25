@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    image: wind-desk
+    ports:
+      - "8000:8000"
+    environment:
+      PORT: "8000"
+      # The image requires the real Elexon snapshot. Set REQUIRE_REAL_DATA=0 to look around with demo data.
+      REQUIRE_REAL_DATA: "${REQUIRE_REAL_DATA:-1}"
+    restart: unless-stopped
+
+  # Refreshes backend/data/snapshot from Elexon:  make data-docker
+  ingest:
+    build: .
+    image: wind-desk
+    profiles: ["tools"]
+    entrypoint: ["python", "-m", "app.ingest"]
+    user: "${LOCAL_UID:-0}:${LOCAL_GID:-0}"
+    volumes:
+      - ./backend/data:/srv/data

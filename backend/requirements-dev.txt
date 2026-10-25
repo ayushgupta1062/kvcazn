@@ -1,0 +1,3 @@
+-r requirements.txt
+pytest==9.1.1
+httpx2==2.16.0  # what Starlette's TestClient now uses (httpx still drives the real Elexon calls)

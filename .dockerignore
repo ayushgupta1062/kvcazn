@@ -1,0 +1,15 @@
+.git
+.github
+.vercel
+**/node_modules
+**/__pycache__
+**/*.pyc
+**/.pytest_cache
+**/.venv
+backend/tests
+backend/static
+frontend/dist
+docs
+*.md
+Makefile
+docker-compose.yml

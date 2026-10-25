@@ -1,0 +1,4 @@
+# Heroku "container" stack: Heroku builds the Dockerfile and runs it, passing the port in $PORT.
+build:
+  docker:
+    web: Dockerfile

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd frontend && npm ci && npm run build && mkdir -p ../public && cp -r dist/. ../public/",
+  "outputDirectory": "public",
+  "functions": {
+    "api/index.py": {
+      "excludeFiles": "{frontend/**,docs/**,qa/**,backend/tests/**,backend/.venv/**,.github/**,public/**}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" },
+    { "source": "/docs", "destination": "/api/index" },
+    { "source": "/openapi.json", "destination": "/api/index" }
+  ]
+}
